@@ -3,7 +3,6 @@
 export const evaluate_function = (f: (x: number) => number, d: Array<number>) => {
   const res = [];
   for (const x of d) {
-    // res.push({ [x]: f(x) });
     res.push(f(x));
     console.log(`f(${x}) = ${f(x)}`);
   }
