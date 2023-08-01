@@ -10,3 +10,11 @@ export const is_positive = (n: number) => {
 export const round = (x: number, precision: number) => {
   return Number(x.toFixed(precision));
 };
+
+export const to_radians = (deg: number) => {
+  return deg * (Math.PI / 180);
+};
+
+export const to_degrees = (radians: number) => {
+  return radians * (180 / Math.PI);
+};
