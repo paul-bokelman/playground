@@ -54,4 +54,4 @@ const law_of_sines = (
   // saa case (WIP)
 };
 
-console.log(law_of_sines({ c: 8, b: 24 }, { C: 33 }));
+console.log(law_of_sines({ a: 39, c: 63 }, { A: 58 }));

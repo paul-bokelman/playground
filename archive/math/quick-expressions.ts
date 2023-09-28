@@ -58,4 +58,5 @@ const presets = {
   all: { methods: ["addition", "division", "multiplication", "subtraction"], digits: undefined },
 } as { [key: string]: { methods: TableMethod[]; digits: number | undefined } };
 
-quick_expressions(25, presets["all"]);
+// quick_expressions(5, presets["x"]);
+quick_expressions(10, { methods: ["multiplication"], digits: 1 });

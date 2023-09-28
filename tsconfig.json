@@ -3,7 +3,7 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "isolatedModules": true,
-    "moduleResolution": "node",
+    "moduleResolution": "NodeNext",
     "resolveJsonModule": true,
     "outDir": "build",
     "module": "NodeNext",
@@ -19,6 +19,16 @@
     "files": true
   },
 
-  "include": ["logger.ts", "archive/*", "types/*.d.ts", "archive/math/*"],
+  "include": [
+    "logger.ts",
+    "archive/*",
+    "types/*.d.ts",
+    "archive/math/*",
+    "archive/javascript/yup-format-error.js",
+    "archive/javascript/reduce-by-filter.ts",
+    "archive/javascript/some.ts",
+    "archive/javascript/path-with-params.ts",
+    "archive/javascript/construct-template-areas.ts"
+  ],
   "exclude": ["node_modules"]
 }
