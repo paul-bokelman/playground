@@ -1,4 +1,4 @@
-// npm run ts -- ./archive/path-with-params.ts
+// npm run ts -- ./archive/javascript/path-with-params.ts
 
 export const path_with_params = (
   initial_path: string,
