@@ -5,7 +5,6 @@ import crypto from "node:crypto";
 const algorithm = "aes-192-cbc";
 
 const hash = (password: string) => crypto.scryptSync(password, "salt", 24);
-const iv = hash("secret").subarray(0, 16);
 
 const hmac = (data: string, password: string) => {
   const hmac = crypto.createHmac("sha256", hash(password));
@@ -16,6 +15,7 @@ const hmac = (data: string, password: string) => {
 
 const encrypt = (data: string, password: string): { encrypted: string; hmac: string } => {
   const key = hash(password);
+  const iv = key.subarray(0, 16);
   const cipher = crypto.createCipheriv(algorithm, key, iv);
   const encrypted = cipher.update(data, "utf8", "hex") + cipher.final("hex");
   return { encrypted, hmac: hmac(data, key.toString("hex")) };
@@ -23,6 +23,7 @@ const encrypt = (data: string, password: string): { encrypted: string; hmac: str
 
 const decrypt = ([encrypted, receivedHmac]: [string, string], password: string) => {
   const key = hash(password);
+  const iv = key.subarray(0, 16);
   const decipher = crypto.createDecipheriv(algorithm, key, iv);
 
   try {
@@ -49,7 +50,7 @@ const writeDifferentData = () => {
   fs.writeFileSync(file, [d, prevHMAC].join(","), "utf-8");
 };
 
-// writeTestFile();
+writeTestFile();
 // writeDifferentData();
 
 (() => {

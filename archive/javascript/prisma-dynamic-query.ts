@@ -1,3 +1,5 @@
+// npm run ts -- ./archive/javascript/prisma-dynamic-query.ts
+
 import _ from "lodash";
 import util from "util";
 
@@ -8,9 +10,9 @@ const options = {
   roles: "true",
 };
 
-const [identifier, identifierValue] = [Object.keys(options)[0], options[Object.keys(options)[0]]];
+const [identifier, identifierValue] = [Object.keys(options)[0], options[Object.keys(options)[0]]] as [string, string];
 
-const queryConstructor = (options) => {
+const queryConstructor = (options: { [key: string]: string }) => {
   const q = Object.keys(options).reduce((acc, key) => {
     if (key !== identifier) {
       acc[key] = options[key];
