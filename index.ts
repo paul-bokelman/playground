@@ -37,5 +37,5 @@ exec(get_command(get_extension()), (error, stdout, stderr) => {
     console.log(`stderr: ${stderr}`);
     return;
   }
-  console.log(`stdout: ${stdout}`);
+  console.log(stdout);
 });

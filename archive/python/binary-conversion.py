@@ -22,6 +22,7 @@ def binaryToDecimal(bs: str) -> int:
         binary_values.append(math.pow(2, len(bs) - 1 - index))
     return int(sum(binary_values))
 
+
 binary_string = decimalToBinary(8324)
 value = binaryToDecimal(binary_string)
 print(value) # 8324

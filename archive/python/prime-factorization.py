@@ -26,4 +26,5 @@ def prime_factorization(x):
 
 
 
-print(prime_factorization(2))
+print(prime_factorization(234))
+
