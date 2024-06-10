@@ -59,4 +59,4 @@ const presets = {
 } as { [key: string]: { methods: TableMethod[]; digits: number | undefined } };
 
 // quick_expressions(5, presets["x"]);
-quick_expressions(10, { methods: ["multiplication"], digits: 1 });
+quick_expressions(10, { methods: ["addition"], digits: 1 });

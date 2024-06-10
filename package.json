@@ -7,7 +7,7 @@
     "start": "ts-node index.ts",
     "dev": "nodemon -q index.js",
     "dev:ts": "nodemon --watch '*.ts' --exec 'ts-node -r' ./index.ts",
-    "ts": "nodemon --watch '*.ts' --exec 'ts-node -r'"
+    "ts": "ts-node"
   },
   "keywords": [],
   "author": "",

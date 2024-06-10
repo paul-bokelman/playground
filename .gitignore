@@ -1,9 +1,6 @@
 node_modules
 .DS_Store
 *.csv
-archive/java/ParseElo.java
-archive/java/Test.java
-archive/java/Travel/Itinerary.java
-archive/java/Travel/TravelTester.java
-archive/java/ParseElo.java
-archive/java/Travel/Booking.java
+*.out
+*.pyc
+.vscode
