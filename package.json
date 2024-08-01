@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@faker-js/faker": "^7.6.0",
-    "bcrypt": "^5.0.1",
+    "bcrypt": "^5.1.1",
     "chalk": "^4.1.2",
     "color-convert": "^2.0.1",
     "csv": "^6.3.6",
@@ -32,6 +32,8 @@
     "ztable": "^1.0.7"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/bcryptjs": "^2.4.6",
     "@types/color-convert": "^2.0.0",
     "@types/jsonwebtoken": "^8.5.8",
     "ansi-escapes": "^6.0.0",

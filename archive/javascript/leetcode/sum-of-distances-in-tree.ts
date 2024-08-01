@@ -6,9 +6,6 @@
 function calculateRootDistanceSum(root: number, edges: number[][], depth: number = 1): number {
   let sum = 0;
 
-  // immediate children of root
-  //   let children: number[] = [];
-
   for (let i = 0; i < edges.length; i++) {
     let edge = edges[i];
 
@@ -17,9 +14,6 @@ function calculateRootDistanceSum(root: number, edges: number[][], depth: number
 
     // if root is included in and unvisited -> mark as visited and increment sum
     if (edge[0] == root || edge[1] == root) {
-      // roots of children
-      //   children.push(edge.slice(0, 2).filter((x) => x != root)[0]);
-
       // mark as visited and increment sum
       edges[i][2] = 1;
       sum += 1 * depth;
