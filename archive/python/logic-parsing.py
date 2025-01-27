@@ -12,8 +12,17 @@ class BlockSchema(TypedDict):
     n_outputs: int
     edges: dict[int, EdgeRelation]
 
+AND_schema: BlockSchema = {
+    "name": "AND",
+    "n_inputs": 2,
+    "n_outputs": 1,
+    "edges": {
+        2: {"block": "AND", "inputs": [0, 1]}
+    }
+}
+
 OR_schema: BlockSchema = {
-    "name": "XOR",
+    "name": "OR",
     "n_inputs": 2,
     "n_outputs": 1,
     "edges": {
@@ -26,7 +35,7 @@ OR_schema: BlockSchema = {
 }
 
 XOR_schema: BlockSchema = {
-    "name": "OR",
+    "name": "XOR",
     "n_inputs": 2,
     "n_outputs": 1,
     "edges": {
@@ -42,7 +51,7 @@ XOR_schema: BlockSchema = {
 }
 
 NAND_schema: BlockSchema = {
-    "name": "OR",
+    "name": "NAND",
     "n_inputs": 2,
     "n_outputs": 1,
     "edges": {
@@ -119,6 +128,7 @@ def compute_schema(schema: BlockSchema, inputs: list[State]) -> list[State]:
 XOR = lambda a, b: compute_schema(XOR_schema, [a, b])[0]
 OR = lambda a, b: compute_schema(OR_schema, [a, b])[0]
 NAND = lambda a, b: compute_schema(NAND_schema, [a, b])[0]
+AND_GATE = lambda a, b: compute_schema(AND_schema, [a, b])[0]
 
 # test schemas
 for inputs in [(0, 0), (0, 1), (1, 0), (1, 1)]:
@@ -126,4 +136,5 @@ for inputs in [(0, 0), (0, 1), (1, 0), (1, 1)]:
     print(f"XOR: {XOR(*inputs)}")
     print(f"OR: {OR(*inputs)}")
     print(f"NAND: {NAND(*inputs)}")
+    print(f"AND: {AND_GATE(*inputs)}")
     print()
