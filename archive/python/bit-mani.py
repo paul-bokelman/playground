@@ -1,6 +1,14 @@
-hex = 0x5ADFACE5
+hex = 0x06
+
+og = 0x0000
+
+dot = 1
 
 digit = 1
-print((hex & (0xF << (digit * 4))) >> (digit * 4))
-print((hex >> digit *4) & 0xF)
-# print((0xF << (digit * 4)))
+final = hex
+final |= (1 << digit + 8)
+if dot:
+    final |= (1 << 7)
+print('7 6 5 4 3 2 1 0 . g f e d c b a')
+binary = format(final, '016b')
+print(' '.join(binary))

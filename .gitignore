@@ -6,3 +6,6 @@ node_modules
 .vscode
 __pycache__
 *.o
+*.keras
+static/
+venv/
