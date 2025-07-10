@@ -9,3 +9,6 @@ __pycache__
 *.keras
 static/
 venv/
+data/
+*.wav
+*.html
